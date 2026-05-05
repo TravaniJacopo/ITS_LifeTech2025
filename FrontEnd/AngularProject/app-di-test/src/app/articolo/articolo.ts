@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { IArticolo } from '../lista-articoli/articolo.interface';
 
 @Component({
   selector: 'app-articolo',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './articolo.scss',
 })
 export class Articolo {
-  
-}
+  articolo = input.required<IArticolo>();
+  aggiungi = output<number>();
+    
+  outputVersoIlPadre()
+  {
+    this.aggiungi.emit(this.articolo().id);
+  }
+  }
+
+
