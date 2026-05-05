@@ -6,10 +6,19 @@
 @for (item of listaArticoli; track $index) {
   <!--<p>Nome: {{ item.name }} - Prezzo: {{ item.price }}</p>
   <button (click)="addElementoCarrello(item.id)">Aggiungi</button>-->
-  <app-articolo [articolo]="item" (aggiungi)="addElementoCarrello($event)"></app-articolo>
+  <app-articolo
+    [articolo]="item"
+    (aggiungi)="addElementoCarrello($event)"
+    (rimuovi)="reduceQuantity($event)"
+  ></app-articolo>
 }
+
+<app-carrello [inputListaArticoliNelCarrello]="listaArticoliNelCarrello"></app-carrello>
+
+<!--
 <p>Totale: {{ getTotale() }}</p>
 
 @for (item of listaArticoliNelCarrello; track $index) {
   <p>Nome: {{ item.name }} - Prezzo: {{ item.price }} - Quantità: {{ item.quantity }}</p>
 }
+-->

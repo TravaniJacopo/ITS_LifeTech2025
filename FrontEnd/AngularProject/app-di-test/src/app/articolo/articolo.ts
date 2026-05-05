@@ -10,11 +10,14 @@ import { IArticolo } from '../lista-articoli/articolo.interface';
 export class Articolo {
   articolo = input.required<IArticolo>();
   aggiungi = output<number>();
-    
-  outputVersoIlPadre()
+  rimuovi = output<number>();
+  outputaggiungi()
   {
     this.aggiungi.emit(this.articolo().id);
   }
+  outputrimuovi()
+  {
+    this.rimuovi.emit(this.articolo().id);
   }
 
-
+}

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { IArticolo } from './articolo.interface';
 import { IElementoCarrello } from './elemento-carrello.interface';
 import { Articolo } from "../articolo/articolo";
+import { Carrello } from "../carrello/carrello";
 
 @Component({
   selector: 'app-lista-articoli',
-  imports: [Articolo],
+  imports: [Articolo, Carrello],
   templateUrl: './lista-articoli.html',
   styleUrl: './lista-articoli.scss',  
 
@@ -36,17 +37,14 @@ export class ListaArticoli {
     }
   }};
 
-
-  getTotale() {
-    let total = 0;
-    if (this.listaArticoliNelCarrello.length === 0) {
-      return total;
+  reduceQuantity(id: number) {
+    let el = this.listaArticoliNelCarrello.find((s:any) => s.id === id);
+    if (el) {
+      if (el.quantity > 1) {
+        el.quantity = el.quantity - 1;
+      } else {
+        this.listaArticoliNelCarrello = this.listaArticoliNelCarrello.filter((s:any) => s.id !== id);
+      }
     }
-    else {  
-    this.listaArticoliNelCarrello.forEach((s:any) => {
-      total = total + (s.price * s.quantity);
-    });
-    return total;
-       }}
-
+  };
 }
