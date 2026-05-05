@@ -1,4 +1,4 @@
 @for (item of inputListaArticoliNelCarrello(); track $index) {
   <p>Nome: {{ item.name }} - Prezzo: {{ item.price }} - Quantità: {{ item.quantity }}</p>
 }
-<p>Totale: {{ getTotale() }}</p>
+<p id="totale">Totale: {{ getTotale() }}</p>
