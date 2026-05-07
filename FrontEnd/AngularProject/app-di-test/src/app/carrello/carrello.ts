@@ -9,7 +9,7 @@ import { Component, input } from '@angular/core';
 export class Carrello {
 
   inputListaArticoliNelCarrello = input.required<any[]>();
-  
+
     getTotale() {
     let total = 0;
     if (this.inputListaArticoliNelCarrello().length === 0) {
@@ -22,4 +22,5 @@ export class Carrello {
     return total;
        }}
 
+       
 }
