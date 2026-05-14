@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col">
+    <h2>Lista: {{ lista.length }} elementi</h2>
+    @for (item of lista; track item.id) {
+      <span><input type="checkbox" /></span>
+      <span class="border border-dark p-3 m-3">{{ item.desc }}</span>
+      <button (click)="removeElemento(item.id)" class="btn btn-danger p-3 m-3">Rimuovi</button>
+      <br />
+    }
+  </div>
+</div>
