@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col border border-dark">
+
+    <table class="table">
+        <title>Lista voci</title>
+        <th>Descrizione</th>
+        <th>Importo</th>
+        <th>Flag</th>
+        @for (item of lista; track $index){
+            <tr>
+            <td>{{item.desc}}</td>
+            <td>{{item.importo}}</td>
+            @if (item.flag == true){
+                <td class="text-success">ENTRATA</td>
+            } @else {
+                <td class="text-danger">USCITA</td>
+            }
+        </tr>
+        }
+    </table>
+  </div>
+      @if(saldo() > 0){
+        <h3 class="text-success">Saldo: {{saldo()}}</h3>
+    } @else if (saldo() < 0){
+        <h3 class="text-danger">Saldo: {{saldo()}}</h3>
+    } @else {
+        <h3>Saldo: {{saldo()}}</h3>
+    }
+ </div>
