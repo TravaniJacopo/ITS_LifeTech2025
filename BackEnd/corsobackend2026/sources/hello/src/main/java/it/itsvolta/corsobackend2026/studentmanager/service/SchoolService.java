@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 import it.itsvolta.corsobackend2026.studentmanager.dto.SchoolDTO;
 import it.itsvolta.corsobackend2026.studentmanager.repository.CourseRepository;
-import it.itsvolta.corsobackend2026.studentmanager.repository.StudentRepository;
 import it.itsvolta.corsobackend2026.studentmanager.repository.SchoolRepository;
+import it.itsvolta.corsobackend2026.studentmanager.repository.StudentRepository;
 
 @Service
 public class SchoolService {
