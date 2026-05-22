@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import it.itsvolta.corsobackend2026.studentmanager.service.BirreriaService;
 import it.itsvolta.corsobackend2026.studentmanager.dto.BirreriaDTO;
+import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @RestController
@@ -12,17 +13,24 @@ import java.util.List;
 public class BirreriaController {
     private final BirreriaService birreriaService;
 
+
+    
     public BirreriaController(BirreriaService birreriaService) {
         this.birreriaService = birreriaService;
     }
 
-    @GetMapping("")
-    public List<BirreriaDTO> getBirrerie() {
-       try {
-            return birreriaService.getBirrerie();
-         } catch (Exception e) {
+    @GetMapping
+    public List<BirreriaDTO> getBirrerie(
+            @RequestParam(required = false) Integer page) {
+
+        try {
+
+            return birreriaService.getBirrerie(page);
+
+        } catch (Exception e) {
+
             e.printStackTrace();
-            return List.of(); 
-         }
+            return List.of();
+        }
     }
 }
