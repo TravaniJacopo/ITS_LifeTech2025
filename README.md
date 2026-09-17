@@ -1,4 +1,4 @@
-# 📁 Progetti ITS LifeTech 2025/2026
+# 📁 Progetti ITS LifeTech 2025-2027
 
 Autore: Jacopo Travani
 
